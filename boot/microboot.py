@@ -5,6 +5,8 @@ import os
 for i in range(100):
     print("\n")
 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+os.chdir("..")
 print("MicroBoot v1.1")
 print("-----------------")
 print(os.listdir())

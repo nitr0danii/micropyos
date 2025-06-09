@@ -1,6 +1,14 @@
 import os # i use dis for 99% of this entire code
 import network # crucial for wifi
 
+def clear():
+    for i in range(100):
+        print(RESET+"\n")
+
+def open(filename, mode):
+    with open(filename, mode) as f:
+        f.read()
+
 def wifi_auto_connect():                                     ### I cant code so i let deepseek write this. Im stupid.
     if "wifi.dat" in os.listdir():
         with open("wifi.dat", "r") as f:
@@ -20,29 +28,8 @@ except NameError:
 
 ### NOTES ###
 
-# Maximal Size for this file is 10 Kilobytes because technicians will not put more than a few kilobytes of storage into their microcontrollers and i dont fucking know why
-# Can anybody rewrite fortnite so it can run here? Then i can crank 90s on my ESP32
-# Also, when using this OS (why tf would someone use this piece of absolute crap) you can remove microboot because this shi doesnt need an bootloader
-
-##
-# 
-# 
-# 
-# 
-# 
-#  __  __    __    ___  ___  ____  _  _  ____    __  __  ____  ____    __   ____  ____ 
-#(  \/  )  /__\  / __)/ __)(_  _)( \/ )( ___)  (  )(  )(  _ \(  _ \  /__\ (_  _)( ___)
-# )    (  /(__)\ \__ \\__ \ _)(_  \  /  )__)    )(__)(  )___/ )(_) )/(__)\  )(   )__) 
-#(_/\/\_)(__)(__)(___/(___/(____)  \/  (____)  (______)(__)  (____/(__)(__)(__) (____)
-# 
-# 
-# 
-# Max Size is now 1 full Megabyte
-# And you know what else is massive?
-# LLLLOOOOWWW TAPPPPERR FADDDDEEEEEE
-#
-
-
+# Maximal Size for OS is one full Megabyte
+# MicroBoot.py is useless, main.py works without bootloader
 
 
 ### COLORS ###
@@ -57,6 +44,7 @@ ram_vars = {
 
 }
 
+clear()
 print(BLUE+"Micro PyOS v1.1"+RESET)
 
 ### Commands ###
@@ -75,10 +63,6 @@ def mkdir(dirname):
 
 def rm(filename):
     os.remove(filename)
-
-def clear():
-    for i in range(100):
-        print(RESET+"\n")
 
 def cwd():
     print(os.getcwd())
@@ -131,7 +115,8 @@ def load_networks():
     return {}
 
 def install_update():
-    print("THIS PIECE OF SHI TOOK ME 3 FRICKING HOURS AND IT STILL WONT WORK, FUCK UPDATES, YOU CAN INSTALL THEM MANUALLY IF YOU WANT, I FUCKING GIVE UP")
+    print("THIS PIECE OF ABSOLUTE SHI TOOK ME 3 FRICKING HOURS AND IT STILL WONT WORK, FUCK UPDATES, YOU CAN INSTALL THEM MANUALLY IF YOU WANT, I FUCKING GIVE UP")
+    print("edit: EVEN FRICKIN CHATGPT WONT MAKE IT WORK")
 
 commands={"ls": ls,
     "cd": cd,
